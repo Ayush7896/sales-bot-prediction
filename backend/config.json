@@ -1,0 +1,64 @@
+{
+  "company_info": {
+    "name": "FinanceHub Solutions",
+    "phone": "+91-9876543210",
+    "email": "support@financehub.com",
+    "address": "123 Business Park, Mumbai, Maharashtra 400001",
+    "working_hours": "Monday to Friday: 9 AM to 6 PM, Saturday: 9 AM to 1 PM"
+  },
+  
+  "quick_faqs": {
+    "contact": {
+      "keywords": ["contact", "phone", "email", "address", "reach", "call"],
+      "answer": "You can reach us at +91-9876543210 or email support@financehub.com. Our office is at 123 Business Park, Mumbai. We're open Monday to Friday: 9 AM to 6 PM.",
+      "source": "Company Information"
+    },
+    
+    "working_hours": {
+      "keywords": ["hours", "time", "open", "close", "timing", "schedule"],
+      "answer": "We are open Monday to Friday from 9 AM to 6 PM, and Saturday from 9 AM to 1 PM. We're closed on Sundays and public holidays.",
+      "source": "Company Information"
+    },
+    
+    "application_process": {
+      "keywords": ["apply", "application", "process", "how to", "steps", "procedure"],
+      "answer": "Our loan application process is simple: 1) Fill online application 2) Submit documents 3) Get instant approval 4) Receive funds in 24-48 hours. You can start your application by calling us or visiting our website.",
+      "source": "Company Process Guide"
+    },
+    
+    "documents_required": {
+      "keywords": ["documents", "papers", "requirements", "needed", "submit"],
+      "answer": "Generally required documents: PAN Card, Aadhaar Card, Salary Slips (3 months), Bank Statements (6 months), Employment Letter. Specific requirements may vary by loan type.",
+      "source": "Company Process Guide"
+    },
+    
+    "eligibility": {
+      "keywords": ["eligible", "qualify", "criteria", "minimum", "requirement"],
+      "answer": "Basic eligibility: Age 21-65 years, Minimum salary ₹25,000/month, Employment history 2+ years, Good credit score. Specific criteria vary by loan product.",
+      "source": "Company Policy"
+    },
+    
+    "processing_time": {
+      "keywords": ["time", "duration", "fast", "quick", "how long", "processing"],
+      "answer": "We offer quick processing! Application review: 2-4 hours, Approval: Same day, Fund disbursement: 24-48 hours after approval. Home loans may take 3-7 days due to property verification.",
+      "source": "Company Service Standards"
+    }
+  },
+  
+  "nudges": {
+    "pricing_interest": "Interested in our competitive rates? I can help you find the perfect loan plan!",
+    "application_ready": "Ready to apply? I can guide you through our simple 4-step process!",
+    "document_help": "Need help with documents? I can tell you exactly what's required for your loan type!"
+  },
+  
+  "lead_capture": {
+    "fields": ["name", "email", "phone", "loan_type", "loan_amount"],
+    "success_message": "Thank you! Our team will contact you within 2 hours during business hours."
+  },
+  
+  "fallback_responses": {
+    "no_answer": "I don't have specific information about that, but our team can help! Please call +91-9876543210 or share your contact details.",
+    "rag_intro": "Based on our loan products information:",
+    "source_attribution": "This information comes from our official product catalog."
+  }
+}
