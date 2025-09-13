@@ -1,43 +1,80 @@
+# streamlit_lead_widget.py (Frontend-only, widget-style)
+# Lightweight Streamlit frontend demo styled like a real widget.
+# - Live Q&A demo pane (input + placeholder answer)
+# - Nudges UI (linger/scroll/interaction simulation)
+# - Lead capture form (low friction)
+
 import streamlit as st
-import requests
-import os
+import time
+import uuid
 
-API_URL = os.environ.get("API_URL", "http://localhost:8000")
+# --- Utils
 
-st.title("Chatbot")
+def now_iso():
+    import datetime
+    return datetime.datetime.utcnow().isoformat() + "Z"
 
-if "message_history" not in st.session_state:
-    st.session_state["message_history"] = []
+# --- Streamlit UI
 
-# Display chat history
-for message in st.session_state["message_history"]:
-    with st.chat_message(message["role"]):
-        st.markdown(message["content"])
+st.set_page_config(page_title="Lead Widget - Frontend Demo", layout="centered")
 
-# Chat input
-user_input = st.chat_input("Type your question...")
+# Initialize session state for tracking
+if "session_id" not in st.session_state:
+    st.session_state.session_id = str(uuid.uuid4())
+    st.session_state.start_time = time.time()
+    st.session_state.ask_count = 0
+    st.session_state.clicked_sources = 0
+    st.session_state.history = []
 
-if user_input:
-    # Add user query
-    st.session_state["message_history"].append({"role": "user", "content": user_input})
-    with st.chat_message("user"):
-        st.markdown(user_input)
+def mock_answer(query: str):
+    return f"[Demo answer for] {query} — (Backend RAG would respond here with trusted source)."
 
-    # MODIFY THIS LINE:
-    payload = {"user_query": user_input, "session_id": "streamlit_session"}
+# --- Chat-like UI container
+st.markdown("<style> div.stButton > button { width: 100%; } </style>", unsafe_allow_html=True)
 
-    try:
-        response = requests.post(f"{API_URL}/ask", json=payload)
+chat_container = st.container()
+lead_container = st.container()
 
-        if response.status_code == 200:
-            data = response.json()
-            ai_message = data.get("bot_response", "No response from model")
+with chat_container:
+    st.text_input("Ask a question", key="query")
+    if st.button("Send") and st.session_state.query:
+        st.session_state.ask_count += 1
+        answer_text = mock_answer(st.session_state.query)
 
-            st.session_state["message_history"].append({"role": "assistant", "content": ai_message})
-            with st.chat_message("assistant"):
-                st.markdown(ai_message)
-        else:
-            st.error(f"Server error ({response.status_code}): {response.text}")
+        st.session_state.history.append({
+            "query": st.session_state.query,
+            "answer": answer_text,
+            "timestamp": now_iso(),
+        })
 
-    except requests.exceptions.RequestException as e:
-        st.error(f"Connection error: {e}")
+    # Display chat history
+    for item in st.session_state.history:
+        with st.chat_message("user"):
+            st.write(item["query"])
+        with st.chat_message("assistant"):
+            st.write(item["answer"])
+            st.caption("Source: https://example.com")
+
+    if st.button("I clicked a source (simulate)"):
+        st.session_state.clicked_sources += 1
+
+    # Nudges simulation
+    elapsed = time.time() - st.session_state.start_time
+    if elapsed > 10 or st.session_state.ask_count >= 2 or st.session_state.clicked_sources > 0:
+        st.info("Looks like you're interested — want a personalized quote or demo?")
+        if st.button("Yes, I'm interested"):
+            st.session_state.show_lead_modal = True
+            st.rerun()
+
+# --- Lead capture form
+with lead_container:
+    if st.session_state.get("show_lead_modal", False):
+        st.subheader("Share your details")
+        name = st.text_input("Name (optional)")
+        email = st.text_input("Email (optional)")
+        phone = st.text_input("Phone (optional)")
+        interest = st.selectbox("Interest level", ["Curious", "Considering", "Ready to talk"], index=0)
+
+        if st.button("Submit"):
+            st.success("Lead submitted (demo only, not saved).")
+            st.session_state.show_lead_modal = False
