@@ -43,22 +43,5 @@
       "answer": "We offer quick processing! Application review: 2-4 hours, Approval: Same day, Fund disbursement: 24-48 hours after approval. Home loans may take 3-7 days due to property verification.",
       "source": "Company Service Standards"
     }
-  },
-  
-  "nudges": {
-    "pricing_interest": "Interested in our competitive rates? I can help you find the perfect loan plan!",
-    "application_ready": "Ready to apply? I can guide you through our simple 4-step process!",
-    "document_help": "Need help with documents? I can tell you exactly what's required for your loan type!"
-  },
-  
-  "lead_capture": {
-    "fields": ["name", "email", "phone", "loan_type", "loan_amount"],
-    "success_message": "Thank you! Our team will contact you within 2 hours during business hours."
-  },
-  
-  "fallback_responses": {
-    "no_answer": "I don't have specific information about that, but our team can help! Please call +91-9876543210 or share your contact details.",
-    "rag_intro": "Based on our loan products information:",
-    "source_attribution": "This information comes from our official product catalog."
   }
 }
