@@ -1,0 +1,40 @@
+[
+  {
+    "session_id": "streamlit_session",
+    "timestamp": "2025-09-14T12:27:27.696378",
+    "question_count": 2,
+    "intent_score": 6,
+    "user_type": "HOT_LEAD",
+    "lead_captured": true,
+    "messages": [
+      {
+        "role": "user",
+        "content": "what is the price of personal loan"
+      },
+      {
+        "role": "assistant",
+        "content": "The price of a Personal Loan from our finance company starts from INR 10,000 onwards. Personal loans offer flexible repayment options with competitive interest rates. If you're interested in exploring more details or specific terms based on your requirements, feel free to ask!\n\n\ud83d\udcda *Source: finance_company_pricing.pdf*"
+      },
+      {
+        "role": "user",
+        "content": "what is process of filling the application form"
+      },
+      {
+        "role": "assistant",
+        "content": "\u2728 Our loan application process is simple: 1) Fill online application 2) Submit documents 3) Get instant approval 4) Receive funds in 24-48 hours. You can start your application by calling us or visiting our website.\n\n\ud83d\udcda *Source: Company Process Guide*"
+      }
+    ],
+    "interaction_log": [
+      {
+        "timestamp": "2025-09-14T12:26:48.737460",
+        "query": "what is the price of personal loan",
+        "intent_score": 4
+      },
+      {
+        "timestamp": "2025-09-14T12:27:12.387310",
+        "query": "what is process of filling the application form",
+        "intent_score": 2
+      }
+    ]
+  }
+]
