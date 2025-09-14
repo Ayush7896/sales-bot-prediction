@@ -1,3 +1,6 @@
+# Gdrive link
+https://drive.google.com/file/d/13gMUwHyHveKVqjHbpYKjUJtc_LsqqzLc/view?usp=sharing
+
 # sales-bot-prediction
 FinanceHub AI Sales Bot
 Project 3: Sales Page Quick-Answer & Lead Bot (Engage → Inform → Identify)
