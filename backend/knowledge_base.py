@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 
 
 load_dotenv()
-FILENAME = "filepath"
+FILENAME = "/home/ayush/Projects_1/sales-bot/sales-bot-prediction/backend/finance_company_pricing.pdf"
 class DocumentLoader:
 
     def __init__(self):

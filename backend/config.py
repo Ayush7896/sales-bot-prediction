@@ -1,6 +1,6 @@
 import json
 
-FIlEPATH = "filepath"
+FIlEPATH = "/home/ayush/Projects_1/sales-bot/sales-bot-prediction/backend/config.json"
 
 def load_config():
     try:
