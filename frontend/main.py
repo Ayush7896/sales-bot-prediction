@@ -178,7 +178,7 @@ def load_conversation_history():
 st.sidebar.markdown("## 💬 FinanceHub AI Assistant")
 st.sidebar.markdown("---")
 
-# Show user type indicator (for demo - remove in production)
+
 if st.session_state.user_intent_score > 0:
     if st.session_state.user_intent_score > 5:
         st.sidebar.success(f"🔥 Hot Lead (Score: {st.session_state.user_intent_score})")
@@ -290,11 +290,11 @@ if user_input:
     
     st.rerun()
 
-# --- Main Page Content ---
+
 st.markdown("# Welcome to FinanceHub Solutions")
 st.markdown("### Your Trusted Partner for All Financial Needs")
 
-# Define page content
+
 page_content = {
     "🏠 Home Loans": {
         "text": """
@@ -346,10 +346,9 @@ page_content = {
     }
 }
 
-# Create tabs
+
 tabs = st.tabs(list(page_content.keys()))
 
-# Process each tab
 for idx, (tab, (tab_name, content)) in enumerate(zip(tabs, page_content.items())):
     with tab:
         # Initialize tab timer when first visiting this tab

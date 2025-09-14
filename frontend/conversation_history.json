@@ -1,7 +1,7 @@
 [
   {
     "session_id": "streamlit_session",
-    "timestamp": "2025-09-14T12:55:47.323654",
+    "timestamp": "2025-09-14T13:28:53.507063",
     "question_count": 2,
     "intent_score": 6,
     "user_type": "HOT_LEAD",
@@ -9,15 +9,15 @@
     "messages": [
       {
         "role": "user",
-        "content": "what is the price of personal loan?"
+        "content": "what is the price of home loan?"
       },
       {
         "role": "assistant",
-        "content": "The price of a Personal Loan starts from 10,000 INR onwards. It offers flexible repayment options with competitive interest rates. If you are interested in exploring more details or have any specific questions about the Personal Loan, feel free to ask!\n\n\ud83d\udcda *Source: finance_company_pricing.pdf*"
+        "content": "The price of a Home Loan starts from INR 5,00,000 onwards. Our Home Loans offer low-interest rates to help you purchase your dream home. If you need more information or assistance with applying for a Home Loan, feel free to ask!\n\n\ud83d\udcda *Source: finance_company_pricing.pdf*"
       },
       {
         "role": "user",
-        "content": "what is the process of filling the application form?"
+        "content": "what is the process of filling the application form"
       },
       {
         "role": "assistant",
@@ -26,13 +26,13 @@
     ],
     "interaction_log": [
       {
-        "timestamp": "2025-09-14T12:41:45.903293",
-        "query": "what is the price of personal loan?",
+        "timestamp": "2025-09-14T13:28:05.627319",
+        "query": "what is the price of home loan?",
         "intent_score": 4
       },
       {
-        "timestamp": "2025-09-14T12:42:08.270673",
-        "query": "what is the process of filling the application form?",
+        "timestamp": "2025-09-14T13:28:30.571628",
+        "query": "what is the process of filling the application form",
         "intent_score": 2
       }
     ]

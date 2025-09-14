@@ -136,20 +136,3 @@ async def ask(request: UserQuery):
         
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
-
-# Optional: Endpoint to save leads from frontend
-@app.post("/save_lead")
-async def save_lead(lead_data: dict):
-    try:
-        lead_data["timestamp"] = datetime.now().isoformat()
-        lead_data["session_id"] = lead_data.get("session_id", "unknown")
-        lead_data["questions_asked"] = session_question_counts.get(lead_data["session_id"], 0)
-        
-        # Save to file
-        with open("leads.json", "a") as f:
-            json.dump(lead_data, f)
-            f.write("\n")
-        
-        return {"status": "success", "message": "Lead saved successfully"}
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
